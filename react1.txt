@@ -1,0 +1,101 @@
+ReactJS
+=======
+It is a declarative, efficient and flexible javascript library which is used to develop frontend applications and User interfaces.
+
+It is an open source, component based javascript frontend  library responsible only for view layer of the application.
+
+It is developed by Jordon Walke the popular software engineer at facebook.
+
+It is initially developed and maintained by the faceoook and later it is used in their own products like whatsapp and instagram.
+
+It was realease to the public in the month of May, 2013.
+
+The official website of reactjs is http://www.react.dev.
+
+The latest version of reactjs is v18.2.2.
+
+It is used to create reusable components.
+
+A component is a building block of react application.
+
+
+Advantages of ReactJS
+======================
+1) It is easy to learn and easy to use.
+
+2) It supports virtual DOM.
+
+3) It supports one way data binding.
+
+4) Good documentation and community support.
+
+5) It supported by all major browsers.
+
+6) It is used to create reusable components.
+
+
+
+Q) What is the difference between Angular and react?
+
+Angular						React
+-----------					----------
+It is a product of Google.			It is a product of Facebook.
+
+It is a open source javascript framework	It is a javascript frontend library
+for web and mobile development.			responsible only for view layer of the 
+						application.
+
+It is developed in Oct, 2015.			It is developed in May, 2013.
+
+It supports two way data binding.		It supports one way data binding.
+
+It uses tradition DOM.				It uses virtual DOM.
+
+It is used to develop rich featured		It is used to develop Single Page Application
+application.					(SPA).
+
+Typescript language is used.			JSX language is used.
+
+Jasmine and karma is used as a testing 		Jest and Enzyme is used as a testing 
+frameworks.					frameworks.
+
+It uses default port number i.e 4200.		It uses default port number i.e 3000.
+
+Angular used by Google, Delta, Gmail, 		React used by Facebook , whatsapp, instagram,
+Samsung, Paypal and etc.			Airbnb, Netflix and etc.
+
+
+How ReactJs works internally
+============================
+Diagram: react1.1
+
+React uses a virtual DOM that is basically a DOM tree representation in JavaScript. 
+
+So when it needs to read or write to the DOM, it will use the virtual representation of it.Then the virtual DOM will try to find the most efficient way to update the browser's DOM.
+
+Assume we have created multiple components and consistently we are performing some changes in our application.Now we need to see ,how virtual DOM react on each change.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,654 @@
+Function component with props
+=============================
+
+myapp6
+|
+|---node_modules
+|
+|---public
+	|
+	|---index.html
+	|---manifest.json 
+	|---favicon.ico
+|
+|------src
+	|
+	|---index.js
+	|---App.js
+|
+|---package.json
+|---README.md
+
+step1:
+-----
+	Create a react project i.e myapp6.
+	ex:
+		Reactprojects> npx create-react-app myapp6
+
+step2:
+-----
+	Open the VSC editor.
+	ex:
+		Reactprojects> code . 
+
+step3:
+-----
+	Switch to the project.
+	ex:
+		Reactprojects> cd   myapp6
+
+step4:
+-----
+	Run the react application.
+	ex:
+		Reactprojects/myapp6>  npm start
+
+
+step5:
+----
+	Add "ES7 React/Redux/GraphQL" extenion in VSC editor.
+	ex:
+		rfce -  Named function component
+		rafce - Arrow function component 
+		imr   - import React 
+		imc   - import React and component
+		rcc   - class component  
+
+step6:
+-----
+	Create a index.js file and pass some data to App.js file.
+
+index.js
+---------
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App name="Alan" rollno="101"/>
+  </React.StrictMode>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+step7:
+-----
+	Create App.js file and display props values.
+
+App.js
+------
+import React from 'react'
+
+function App(props) 
+{
+  return (
+    <div>
+        <h1>Name : {props.name}</h1>
+        <h1>Roll No : {props.rollno}</h1>
+    </div>
+  )
+}
+
+export default App
+
+
+Class component with props
+=============================
+In class component we can display props values i.e this.props.
+
+myapp6
+|
+|---node_modules
+|
+|---public
+	|
+	|---index.html
+	|---manifest.json 
+	|---favicon.ico
+|
+|------src
+	|
+	|---index.js
+	|---App.js
+|
+|---package.json
+|---README.md
+
+step1:
+-----
+	Create a react project i.e myapp6.
+	ex:
+		Reactprojects> npx create-react-app myapp6
+
+step2:
+-----
+	Open the VSC editor.
+	ex:
+		Reactprojects> code . 
+
+step3:
+-----
+	Switch to the project.
+	ex:
+		Reactprojects> cd   myapp6
+
+step4:
+-----
+	Run the react application.
+	ex:
+		Reactprojects/myapp6>  npm start
+
+
+step5:
+----
+	Add "ES7 React/Redux/GraphQL" extenion in VSC editor.
+	ex:
+		rfce -  Named function component
+		rafce - Arrow function component 
+		imr   - import React 
+		imc   - import React and component
+		rcc   - class component  
+
+step6:
+-----
+	Create a index.js file and pass some data to App.js file.
+
+index.js
+---------
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App name="Alan" rollno="101"/>
+  </React.StrictMode>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+step7:
+-----
+	Create App.js file and display props values.
+
+App.js
+------
+import React, { Component } from 'react'
+
+export default class App extends Component {
+  render() {
+    return (
+      <div>
+          <h1>Name : {this.props.name}</h1>
+          <h1>Roll No : {this.props.rollno}</h1>
+      </div>
+    )
+  }
+}
+
+
+
+React CSS
+=========
+There are two ways to use CSS in react components.
+
+1) Using inline styling
+
+2) Using CSS stylesheet 
+
+1) Using inline styling
+--------------------------
+In react inline styling represented by using "style" attribute.
+
+Project structure
+----------------
+
+myapp6
+|
+|---node_modules
+|
+|---public
+	|
+	|---index.html
+	|---manifest.json 
+	|---favicon.ico
+|
+|------src
+	|
+	|---index.js
+	|---App.js
+|
+|---package.json
+|---README.md
+
+step1:
+-----
+	Create a react project i.e myapp7.
+	ex:
+		Reactprojects> npx create-react-app myapp7
+
+step2:
+-----
+	Open the VSC editor.
+	ex:
+		Reactprojects> code . 
+
+step3:
+-----
+	Switch to the project.
+	ex:
+		Reactprojects> cd   myapp7
+
+step4:
+-----
+	Run the react application.
+	ex:
+		Reactprojects/myapp7>  npm start
+
+step5:
+------
+	Add the css code inside "App.js" file.
+
+App.js
+------
+import React from 'react'
+
+function App() {
+  return (
+    <div>
+        <h1 style={{color:"blue"}}>Heading Tag </h1>
+        <p style={{color:"red",backgroundColor:"yellow"}}>Paragraph Tag</p>
+    </div>
+  )
+}
+
+export default App
+
+or
+
+App.js
+-------
+import React from 'react'
+
+function App() {
+
+  const paraStyle={
+    color:"blue",
+    backgroundColor:"cyan",
+    textAlign:"center",
+    fontSize:"40px"
+  }
+
+  return (
+    <div>
+        <h1 style={{color:"blue"}}>Heading Tag </h1>
+        <p style={paraStyle}>Paragraph Tag</p>
+    </div>
+  )
+}
+
+export default App
+
+
+2) Using CSS stylesheet 
+------------------------
+In CSS stylesheet, we will create a sperate .css file and we will import in any perticular when it is required.
+
+Project structure
+---------------------
+myapp6
+|
+|---node_modules
+|
+|---public
+	|
+	|---index.html
+	|---manifest.json 
+	|---favicon.ico
+|
+|------src
+	|
+	|---index.js
+	|---App.js
+	|---App.css
+|
+|---package.json
+|---README.md
+
+step1:
+-----
+	Create a react project i.e myapp7.
+	ex:
+		Reactprojects> npx create-react-app myapp7
+
+step2:
+-----
+	Open the VSC editor.
+	ex:
+		Reactprojects> code . 
+
+step3:
+-----
+	Switch to the project.
+	ex:
+		Reactprojects> cd   myapp7
+
+step4:
+-----
+	Run the react application.
+	ex:
+		Reactprojects/myapp7>  npm start
+
+step5:
+------
+	import App.css file inside App.js file and write below code.
+
+App.js
+------
+import React from 'react'
+import './App.css'
+
+function App() {
+  return (
+    <div>
+        <h1>Heading Tag </h1>
+        <p className='paraStyle'>Paragraph Tag</p>
+    </div>
+  )
+}
+
+export default App
+
+
+step6:
+-----
+	Declare css code inside App.css file.
+
+App.css
+--------
+
+body
+{
+  background-color: cyan;
+}
+h1
+{
+  color:brown;
+}
+.paraStyle
+{
+  text-align: center;
+  font-size: 50px;
+}
+
+State
+======
+State is similar to props but is private and fully controlled by a component.
+
+State we can declare only in class component.
+
+State can be modified or updatable where as props is read only.
+
+There are two ways to initialized the state in react.
+
+1) Inside the class 
+
+2) Inside the constructor 
+
+
+1) Inside the class 
+--------------------
+
+Project structure
+---------------------
+myapp8
+|
+|---node_modules
+|
+|---public
+	|
+	|---index.html
+	|---manifest.json 
+	|---favicon.ico
+|
+|------src
+	|
+	|---index.js
+	|---App.js
+	|---App.css
+|
+|---package.json
+|---README.md
+
+step1:
+-----
+	Create a react project i.e myapp8.
+	ex:
+		Reactprojects> npx create-react-app myapp8
+
+step2:
+-----
+	Open the VSC editor.
+	ex:
+		Reactprojects> code . 
+
+step3:
+-----
+	Switch to the project.
+	ex:
+		Reactprojects> cd   myapp8
+
+step4:
+-----
+	Run the react application.
+	ex:
+		Reactprojects/myapp8>  npm start
+
+step5:
+------
+	Declare the state inside class component of App.js file.
+
+App.js
+-----
+import React, { Component } from 'react'
+
+export default class App extends Component 
+{
+  state={
+    rollno:501,
+    name:"Jose"
+  }
+
+  render() 
+  {
+    return (
+      <div>
+          <h1>Roll No : {this.state.rollno}</h1>
+          <h1>Name : {this.state.name}</h1>
+      </div>
+    )
+  }
+}
+
+
+2) Inside the constructor
+-----------------------
+ 
+Project structure
+---------------------
+myapp8
+|
+|---node_modules
+|
+|---public
+	|
+	|---index.html
+	|---manifest.json 
+	|---favicon.ico
+|
+|------src
+	|
+	|---index.js
+	|---App.js
+	|---App.css
+|
+|---package.json
+|---README.md
+
+step1:
+-----
+	Create a react project i.e myapp8.
+	ex:
+		Reactprojects> npx create-react-app myapp8
+
+step2:
+-----
+	Open the VSC editor.
+	ex:
+		Reactprojects> code . 
+
+step3:
+-----
+	Switch to the project.
+	ex:
+		Reactprojects> cd   myapp8
+
+step4:
+-----
+	Run the react application.
+	ex:
+		Reactprojects/myapp8>  npm start
+
+step5:
+------
+	Declare the state inside class component of App.js file.
+
+App.js
+-----
+import React, { Component } from 'react'
+
+export default class App extends Component 
+{
+  constructor()
+  {
+      super();
+      
+      this.state={
+        rollno:701,
+        name:"Jacky"
+      }
+  }
+  render() 
+  {
+    return (
+      <div>
+          <h1>Roll No :{this.state.rollno}</h1>
+          <h1>Name : {this.state.name}</h1>
+      </div>
+    )
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

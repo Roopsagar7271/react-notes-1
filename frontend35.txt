@@ -1,0 +1,410 @@
+React components
+=================
+Component is a building block of react application.
+
+Components allows us to split our UI into reusable independent pieces.
+
+ex:
+	<Form>, <Table>, <Button>, <Navbar> and etc.
+
+Components are javascript functions they accept arbitary inputs like props and return react element to describe how an element should look like.
+
+React component must and should starts with uppercase letter.
+
+There are two ways to create react components.
+
+1) Function Component / Functional Component 
+
+2) Class Component 
+
+
+1) Function Component
+----------------------
+Function component is also known as stateless component.
+
+Function component is a javascript function which takes props as an argument along with input values and returns react elements.
+
+There are three ways to create function component in react.
+
+ex:1
+----
+function App()
+{
+	return ()
+}
+export default App;
+
+ex:2
+----
+var App=function()
+{
+	return ()
+}
+export default App;
+
+ex:3
+----
+var App=()=>
+{
+	return ()
+}
+export default App;
+
+project structure 
+------------------
+myapp3
+|
+|---node_modules
+|
+|---public
+|	|
+	|---index.html
+	|---manifest.json
+	|---favicon.ico
+
+|-----src
+|	|
+	|---index.js
+	|
+	|---App.js
+	|
+|
+|---package.json
+|---READMD.md	
+
+step1:
+------
+	Create a react application i.e myapp3.	
+	ex:
+		Reactprojects> npx   create-react-app  myapp3
+
+step2:
+------
+	Open VSC code editor.
+	ex:
+		Reactprojects> code  . 
+
+step3:
+------
+	Switch to the project.
+	ex:
+		Reactprojects> cd  myapp3
+
+step4:
+------
+	Run the react project.
+	ex:
+		Reactproject/myapp3> npm  start 
+
+step5:
+------
+	Test the application by using below request url.
+	ex:
+		http://localhost:3000
+
+
+step6:
+------
+	Add function component in App.js file.
+
+App.js
+-------
+
+var App=()=>{
+  return(
+    <h1> Function Component </h1>
+  )
+}
+export default App;
+
+
+
+2) Class component
+------------------
+A class component is also known as statefull component.
+
+To create a class component we need to extends a class with react Component class.
+
+A class component must implement render() method which returns react elements.
+
+ex:
+---
+import {Component} from 'react';
+
+class App extends Component
+{
+	render()
+	{
+		return (
+			-
+			-
+			)	
+	}
+}
+export default App;
+
+
+project structure 
+------------------
+myapp4
+|
+|---node_modules
+|
+|---public
+|	|
+	|---index.html
+	|---manifest.json
+	|---favicon.ico
+
+|-----src
+|	|
+	|---index.js
+	|
+	|---App.js
+	|
+|
+|---package.json
+|---READMD.md	
+
+step1:
+------
+	Create a react application i.e myapp4.	
+	ex:
+		Reactprojects> npx   create-react-app  myapp4
+
+step2:
+------
+	Open VSC code editor.
+	ex:
+		Reactprojects> code  . 
+
+step3:
+------
+	Switch to the project.
+	ex:
+		Reactprojects> cd  myapp4
+
+step4:
+------
+	Run the react project.
+	ex:
+		Reactproject/myapp4> npm  start 
+
+step5:
+------
+	Test the application by using below request url.
+	ex:
+		http://localhost:3000
+
+
+step6:
+------
+	Add function component in App.js file.
+
+App.js
+-------
+import {Component} from 'react';
+class App extends Component
+{
+    render()
+    {
+       return (
+        <h1>Class Component </h1>
+       ) 
+    }
+}
+export default App;
+
+Composing component
+===================
+If a component refers to another component such concept is called composing component.
+
+project structure 
+------------------
+myapp5
+|
+|---node_modules
+|
+|---public
+|	|
+	|---index.html
+	|---manifest.json
+	|---favicon.ico
+
+|-----src
+|	|
+	|---index.js
+	|
+	|---App.js
+	|---Table.js (custom component)
+|
+|---package.json
+|---READMD.md	
+
+step1:
+------
+	Create a react application i.e myapp5.	
+	ex:
+		Reactprojects> npx   create-react-app  myapp5
+
+step2:
+------
+	Open VSC code editor.
+	ex:
+		Reactprojects> code  . 
+
+step3:
+------
+	Switch to the project.
+	ex:
+		Reactprojects> cd  myapp5
+
+step4:
+------
+	Run the react project.
+	ex:
+		Reactproject/myapp5> npm  start 
+
+step5:
+------
+	Test the application by using below request url.
+	ex:
+		http://localhost:3000
+
+
+step6:
+------
+	Create a Table.js file inside "src" folder.
+
+Table.js
+--------
+function Table()
+{
+    return (
+        <>
+            <table border="1" width="100%">
+                <thead>
+                    <tr>
+                        <th>SNO</th>
+                        <th>SNAME</th>
+                        <th>SADD</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>101</td>
+                    <td>Alan</td>
+                    <td>Florida</td>
+                </tr>
+                <tr>
+                    <td>102</td>
+                    <td>Jack</td>
+                    <td>Texas</td>
+                </tr>
+                <tr>
+                    <td>103</td>
+                    <td>Nelson</td>
+                    <td>Chicago</td>
+                </tr>
+                </tbody>
+            </table>
+        </>
+    )
+}
+export default Table;
+
+
+step7:
+------
+	Call Table component inside "App.js" file.
+
+App.js
+------
+import Table from "./Table";
+
+function App()
+{
+  return (
+      <Table/>
+  )
+}
+export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

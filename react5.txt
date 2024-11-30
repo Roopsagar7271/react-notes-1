@@ -1,0 +1,352 @@
+Event Handling in React
+========================
+Action to which javascript response is called event handling.
+
+Handling events on react elements is similar to handling events on DOM elements.
+
+Ex:
+	JavaScript
+	-----------
+		<button onclick="f1()"> clickme </button>
+
+	ReactJS
+	--------
+		Function component : 	<button onClick={handleClick}> clickme </button>
+		Class component : 	<button onClick={this.handleClick}> clickme </button>
+
+
+Event Handling using function component
+========================================
+
+myapp9
+|
+|---node_modules
+|
+|---public
+|	|
+	|---index.html
+	|---manifest.json
+	|---favicon.ico
+
+|----src
+|	|
+	|---index.js
+	|---App.js
+|
+|---package.json
+|---READMD.md
+
+step1:
+-----
+	Create react application i.e myapp9.
+	ex:
+		Reactprojects> npx  create-react-app myapp9
+
+step2:
+------
+	Open VSC editor.
+	ex:
+		Reactprojects> code  . 
+
+step3:
+------
+	Switch to the react project.
+	ex:
+		Reactprojects> cd  myapp9
+
+step4:
+-----
+	Run the react application.
+	ex:
+		Reactprojects/myapp9> npm start 
+
+step5:
+-----
+	Write a below code inside App.js file.
+
+App.js
+-------
+import React from 'react'
+
+function App() {
+
+  const handleClick=()=>
+  {
+    console.log("You have clicked")
+  }
+  return (
+    <div>
+        <button onClick={handleClick}> click Me </button>
+    </div>
+  )
+}
+
+export default App
+
+or
+
+App.js
+-------
+import React from 'react'
+
+function App() {
+
+  const handleClick=(e)=>
+  {
+      e.preventDefault();
+  }
+  
+  return (
+    <div>
+        <a href="http://www.google.com" onClick={handleClick}> click Me </a>
+    </div>
+  )
+}
+
+export default App
+
+
+Event Handling using class component
+========================================
+
+myapp10
+|
+|---node_modules
+|
+|---public
+|	|
+	|---index.html
+	|---manifest.json
+	|---favicon.ico
+
+|----src
+|	|
+	|---index.js
+	|---App.js
+|
+|---package.json
+|---READMD.md
+
+step1:
+-----
+	Open the VSC editor.
+	ex:
+		Reactprojects> code . 
+
+step2:
+------
+	Create a react application i.e myapp10 using VSC terminal.
+	
+	ex:
+		npx create-react-app myapp10
+
+step3:
+-----
+	Switch to the project.
+	ex:
+		cd  myapp10
+
+step4:
+------
+	Run the react application.
+	ex:
+		npm start 
+
+step5:
+-----
+	Write a below code inside App.js file.
+
+App.js
+-------
+import React, { Component } from 'react'
+
+export default class App extends Component {
+
+  handleClick=()=>
+  {
+    console.log("You have clicked once again")
+  }
+
+  render() {
+    return (
+      <div>
+        <button onClick={this.handleClick}> click Me </button>
+      </div>
+    )
+  }
+}
+
+
+React application to update the state
+======================================
+In order to update the state in react we need to use setState() method.
+
+myapp11
+|
+|---node_modules
+|
+|---public
+|	|
+	|---index.html
+	|---manifest.json
+	|---favicon.ico
+
+|----src
+|	|
+	|---index.js
+	|---App.js
+|
+|---package.json
+|---READMD.md
+
+step1:
+-----
+	Open the VSC editor.
+	ex:
+		Reactprojects> code . 
+
+step2:
+------
+	Create a react application i.e myapp10 using VSC terminal.
+	
+	ex:
+		npx create-react-app myapp11
+
+step3:
+-----
+	Switch to the project.
+	ex:
+		cd  myapp11
+
+step4:
+------
+	Run the react application.
+	ex:
+		npm start 
+
+step5:
+-----
+	Write a below code inside App.js file.
+
+App.js
+------
+import React, { Component } from 'react'
+
+export default class App extends Component {
+
+  state={
+    name:"Alan",
+    rollno:101
+  }
+
+  handleClick=()=>
+  {
+    this.setState({"name":"Jose","rollno":201});
+  }
+
+  render() {
+    return (
+      <div>
+          <h1>Name : {this.state.name}</h1>
+          <h1>Roll No : {this.state.rollno}</h1>
+
+          <button onClick={this.handleClick}> Update </button>
+      </div>
+    )
+  }
+}
+
+Q) What is the difference between props and state?
+
+props						state
+--------------					-------------
+It is read-only.				It is updatable.
+
+It is immutable.				It is mutable.
+
+Stateless components can have props.		Statefull components can have state.
+
+It allows us to pass the data from 		It holds information of a component.
+one component to another component as an 
+argument.
+
+Child components can access props.		It is private so child components can't access.
+
+
+Phases of react components
+==========================
+Diagram: react5.1
+
+There are four Phases of components in ReactJS.
+1)Mounting
+2)Updating
+3)Error Handling
+4)Unmounting
+
+
+1)Mounting
+-----------
+Mounting is a process of creating an element and inserting it in a DOM tree.
+
+
+2)Updating
+-------------
+Updating is a process of changing state or props of a component and update changes to nodes already existing in the DOM.
+
+3)Error Handling
+----------------
+Error Handling used when there is a error during rendering ,in lifecycle
+method or in the constructor of any child component.
+
+
+4)Unmounting 
+---------------
+Unmounting is a process of removing elements from the DOM.
+In general it will clear the reserved memory.
+
+
+Q)Explain life cycle methods of mounting ?
+
+ Mounting phase contains four methods.
+ 1) constructor()
+ 2) getDerivedStateFromProps()
+ 3) render()
+ 4) componentDidMount() 
+
+
+Q)Explain life cycle methods of unmounting?
+
+ Unmounting phase contains one method.
+
+ 1) componentWillUnmount()
+
+
+
+Q)Explain life cycle methods of updating?
+
+  updating phase contains five methods.
+  1) getDerivedStateFromProps
+  2) shouldComponentUpdate()
+  3) render()
+  4) getSnapshotBeforeUpdate()
+  4) ComponentDidUpdate() 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

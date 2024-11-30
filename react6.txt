@@ -1,0 +1,286 @@
+
+
+Q) What is React Hook?
+
+Hooks are new addition in React 16.X version.
+
+Hooks we can declare only in function component.
+
+Hooks allow function components to have access to state , lifecycle methods and other React features.
+
+React provides a few built-In hooks like useState(),useEffect(),useReducer() and etc.
+
+It is possible to create custom hook in react.
+
+
+
+
+1) useState() hook
+----------------
+A useState() is a Hook that allows us to add React state to function components.
+
+
+Project structure
+-----------------
+myapp12
+|
+|---node_modules
+|
+|---public
+|	|
+	|---index.html
+	|---manifest.json
+	|---favicon.ico
+
+|-----src
+|	|
+	|---index.js
+	|---App.js
+|
+|---package.json
+|---READMD.md
+
+step1:
+------
+	Create a react application i.e myapp12
+	ex:
+		npx create-react-app myapp12
+
+step2:
+-----
+	Switch to the project.
+	ex:
+		cd  myapp12
+
+
+step3:
+------
+	Run react application.
+	ex:
+		npm start 
+
+
+step4:
+------
+	Test the application by using below request url.
+	ex:
+		http://localhost:3000
+
+step5:
+-----
+	Write a below code inside App.js file.
+
+App.js
+------
+import React from 'react'
+import { useState } from 'react'
+
+function App() 
+{
+
+  const [name,setName]=useState("Alan");
+
+  const handleClick=()=>
+  {
+    setName("Jose");
+  }
+
+  return (
+    <div>
+        <h1>Name : {name} </h1>
+        <button onClick={handleClick}> Change </button>
+    </div>
+  )
+}
+
+export default App
+
+
+
+2) useEffect() hook
+-------------------
+It is used to  perform side effects in function components.
+
+Data fetching , setting up a subscription, changing the document title and manually changing the DOM in React components are examples of side effects.
+
+
+Project structure
+-----------------
+myapp12
+|
+|---node_modules
+|
+|---public
+|	|
+	|---index.html
+	|---manifest.json
+	|---favicon.ico
+
+|-----src
+|	|
+	|---index.js
+	|---App.js
+|
+|---package.json
+|---READMD.md
+
+step1:
+------
+	Create a react application i.e myapp12
+	ex:
+		npx create-react-app myapp12
+
+step2:
+-----
+	Switch to the project.
+	ex:
+		cd  myapp12
+
+
+step3:
+------
+	Run react application.
+	ex:
+		npm start 
+
+
+step4:
+------
+	Test the application by using below request url.
+	ex:
+		http://localhost:3000
+
+step5:
+-----
+	Write a below code inside App.js file.
+
+App.js
+------
+import React from 'react'
+import { useState,useEffect } from 'react';
+
+function App() 
+{
+  const [count,setCount]=useState(0);
+
+  const handleClick=()=>
+  {
+    setCount(count+1);
+  }
+
+  useEffect(()=>{
+    document.title=`You have ${count} clicked`;
+  });
+
+  return (
+    <div>
+        <h1>Count : {count} </h1>
+        <button onClick={handleClick}> Increment </button>
+    </div>
+  )
+}
+
+export default App
+
+
+
+3) useReducer() hook
+--------------------
+The useReducer() Hook is similar to the useState() Hook.
+
+It allows for custom state logic.
+
+The useReducer Hook accepts two arguments.
+ex:
+
+	useReducer(<reducer>, <initialState>)
+
+The useReducer Hook returns the current state and a dispatch method.
+ex:
+	const [state,dispatch]= userReducer(reducer,initialState);
+
+
+Project structure
+-----------------
+myapp12
+|
+|---node_modules
+|
+|---public
+|	|
+	|---index.html
+	|---manifest.json
+	|---favicon.ico
+
+|-----src
+|	|
+	|---index.js
+	|---App.js
+|
+|---package.json
+|---READMD.md
+
+step1:
+------
+	Create a react application i.e myapp12
+	ex:
+		npx create-react-app myapp12
+
+step2:
+-----
+	Switch to the project.
+	ex:
+		cd  myapp12
+
+
+step3:
+------
+	Run react application.
+	ex:
+		npm start 
+
+
+step4:
+------
+	Test the application by using below request url.
+	ex:
+		http://localhost:3000
+
+step5:
+-----
+	Write a below code inside App.js file.
+
+App.js
+----------
+import {useReducer} from 'react';
+
+const initialState=0;
+const reducer=(state,action)=>
+{
+    switch(action)
+    {
+        case 'increment': return state+1;
+        case 'decrement': return state-1;
+        case 'reset': return initialState;
+        default: return state;
+    }
+}
+function App()
+{
+ const [count,dispatch]=useReducer(reducer,initialState);
+    
+    return (
+        <div>
+            <h1>Count : {count}</h1>
+            <button onClick={()=>dispatch('increment')}>Increment</button>
+            <button onClick={()=>dispatch('decrement')}>Decrement</button>
+            <button onClick={()=>dispatch('reset')}>Reset</button>
+           
+        </div>
+    )
+}
+export default App;
+
+
+
+
